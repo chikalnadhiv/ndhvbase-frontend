@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: #000000;
+    --foreground: #ededed;
+    
+    --primary: #5e6ad2;
+    --primary-foreground: #ffffff;
+    
+    --secondary: #0a0a0a;
+    --secondary-foreground: #ffffff;
+    
+    --muted: #0a0a0a;
+    --muted-foreground: #8a8f98;
+    
+    --accent: #0a0a0a;
+    --accent-foreground: #ffffff;
+    
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+
+    --border: #1a1a1a;
+    --input: #0a0a0a;
+    --ring: #5e6ad2;
+    
+    --card: #050505;
+    --card-foreground: #ededed;
+    
+    --popover: #000000;
+    --popover-foreground: #ededed;
+
+    --radius-lg: 0.5rem;
+    --radius-md: calc(0.5rem - 2px);
+    --radius-sm: calc(0.5rem - 4px);
+  }
+
+  .light {
+    --background: #fafafa;
+    --foreground: #18181b;
+    
+    --primary: #5e6ad2;
+    --primary-foreground: #ffffff;
+    
+    --secondary: #f4f4f5;
+    --secondary-foreground: #18181b;
+    
+    --muted: #f4f4f5;
+    --muted-foreground: #52525b;
+    
+    --accent: #f4f4f5;
+    --accent-foreground: #18181b;
+    
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+
+    --border: #e4e4e7;
+    --input: #ffffff;
+    --ring: #5e6ad2;
+    
+    --card: #ffffff;
+    --card-foreground: #18181b;
+    
+    --popover: #ffffff;
+    --popover-foreground: #18181b;
+  }
+}
+
+@theme {
+  --font-sans: var(--font-outfit), var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-anton: var(--font-anton);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --radius-lg: var(--radius-lg);
+  --radius-md: var(--radius-md);
+  --radius-sm: var(--radius-sm);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-outfit), var(--font-geist-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Global cursor pointer for interactive elements */
+button,
+[role="button"],
+[type="button"],
+[type="submit"],
+[type="reset"],
+a[href],
+label[for],
+select,
+summary {
+  cursor: pointer;
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(to right, #fff, #a5a5a5);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .linear-gradient-bg {
+    background: radial-gradient(ellipse at top, #1b1b3a 0%, var(--background) 50%);
+  }
+}
