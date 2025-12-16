@@ -146,7 +146,7 @@ export function Hero() {
   const { openContact } = useContact();
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-12 sm:pt-20 sm:pb-0 -mt-16 sm:-mt-20">
+    <section className="relative h-[100svh] flex items-center justify-center overflow-hidden pt-24 pb-12 sm:pt-20 sm:pb-0 -mt-16 sm:-mt-20">
       {/* Background Elements */}
       <div className="absolute inset-0 z-0">
         {/* Background */}
