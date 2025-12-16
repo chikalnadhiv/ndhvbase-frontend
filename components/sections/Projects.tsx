@@ -251,7 +251,7 @@ export function Projects() {
                   {projects.map((project) => (
                     <div 
                       key={project.id} 
-                      className="flex-[0_0_80%] min-w-0 md:flex-[0_0_calc(50%-12px)] lg:flex-[0_0_calc(33.333%-16px)]"
+                      className="flex-[0_0_85%] min-w-0 md:flex-[0_0_calc(50%-12px)] lg:flex-[0_0_calc(33.333%-16px)]"
                     >
                       <ProjectCard project={project} />
                     </div>
@@ -311,7 +311,7 @@ export function Projects() {
               <div 
                 key={project.id}
                 style={{ transitionDelay: `${index * 100}ms` }}
-                className="snap-center flex-shrink-0 w-[80vw] md:w-[calc(33.333%-(16px*2/3))] lg:w-[calc(33.333%-(16px*2/3))]"
+                className="snap-center flex-shrink-0 w-[85vw] md:w-[calc(33.333%-(16px*2/3))] lg:w-[calc(33.333%-(16px*2/3))]"
               >
                 <div className="h-full">
                   <ProjectCard project={project} />

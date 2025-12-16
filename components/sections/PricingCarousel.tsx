@@ -73,7 +73,7 @@ export function PricingCarousel({ plans }: PricingCarouselProps) {
         }}
       >
         {plans.map((plan) => (
-          <div key={plan.id} className="snap-center flex-shrink-0 w-[80vw] md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
+          <div key={plan.id} className="snap-center flex-shrink-0 w-[85vw] md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
             <PricingCard plan={plan} />
           </div>
         ))}
@@ -89,7 +89,7 @@ export function PricingCarousel({ plans }: PricingCarouselProps) {
           {plans.map((plan) => (
             <div
               key={plan.id}
-              className="flex-[0_0_80%] min-w-0 md:flex-[0_0_calc(50%-12px)] lg:flex-[0_0_calc(33.333%-16px)]"
+              className="flex-[0_0_85%] min-w-0 md:flex-[0_0_calc(50%-12px)] lg:flex-[0_0_calc(33.333%-16px)]"
             >
               <PricingCard plan={plan} />
             </div>
