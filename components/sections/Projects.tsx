@@ -251,7 +251,7 @@ export function Projects() {
                   {projects.map((project) => (
                     <div 
                       key={project.id} 
-                      className="flex-[0_0_100%] min-w-0 md:flex-[0_0_calc(50%-12px)] lg:flex-[0_0_calc(33.333%-16px)]"
+                      className="flex-[0_0_85%] min-w-0 md:flex-[0_0_calc(50%-12px)] lg:flex-[0_0_calc(33.333%-16px)]"
                     >
                       <ProjectCard project={project} />
                     </div>
