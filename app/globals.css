@@ -136,4 +136,13 @@ summary {
   .linear-gradient-bg {
     background: radial-gradient(ellipse at top, #1b1b3a 0%, var(--background) 50%);
   }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }

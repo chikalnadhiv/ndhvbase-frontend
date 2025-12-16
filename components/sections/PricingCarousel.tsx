@@ -66,14 +66,14 @@ export function PricingCarousel({ plans }: PricingCarouselProps) {
   if (plans.length <= 3) {
     return (
       <div 
-        className="flex flex-nowrap overflow-x-auto snap-x snap-mandatory gap-6 pt-8 pb-12 px-6 -mx-6 md:mx-0 md:px-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8"
+        className="flex flex-nowrap overflow-x-auto snap-x snap-mandatory gap-6 pt-8 pb-12 px-6 -mx-6 md:mx-0 md:px-0 scrollbar-hide"
         style={{
           scrollbarWidth: 'none',
           msOverflowStyle: 'none'
         }}
       >
         {plans.map((plan) => (
-          <div key={plan.id} className="snap-center flex-shrink-0 w-[85vw] md:w-auto">
+          <div key={plan.id} className="snap-center flex-shrink-0 w-[85vw] md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
             <PricingCard plan={plan} />
           </div>
         ))}

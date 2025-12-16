@@ -297,9 +297,9 @@ export function Projects() {
             </div>
           </div>
         ) : (
-          // Grid for 3 or fewer projects
+          // Horizontal list for 3 or fewer projects (consistent with user request for horizontal)
           <div 
-            className={`flex flex-nowrap overflow-x-auto snap-x snap-mandatory gap-6 pb-6 -mx-6 px-6 md:mx-0 md:px-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8 md:pb-0 transition-all duration-1000 delay-300 ${
+            className={`flex flex-nowrap overflow-x-auto snap-x snap-mandatory gap-6 pb-6 -mx-6 px-6 md:mx-0 md:px-0 scrollbar-hide transition-all duration-1000 delay-300 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
             style={{
@@ -311,9 +311,11 @@ export function Projects() {
               <div 
                 key={project.id}
                 style={{ transitionDelay: `${index * 100}ms` }}
-                className="snap-center flex-shrink-0 w-[85vw] md:w-auto"
+                className="snap-center flex-shrink-0 w-[85vw] md:w-[calc(33.333%-(16px*2/3))] lg:w-[calc(33.333%-(16px*2/3))]"
               >
-                <ProjectCard project={project} />
+                <div className="h-full">
+                  <ProjectCard project={project} />
+                </div>
               </div>
             ))}
           </div>
