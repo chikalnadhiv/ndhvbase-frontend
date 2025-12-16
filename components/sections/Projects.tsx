@@ -247,7 +247,7 @@ export function Projects() {
             <div className="relative">
               {/* Carousel Container with padding to prevent border clipping */}
               <div className="overflow-hidden px-[2px] py-[2px] -mx-[2px] -my-[2px]" ref={emblaRef}>
-                <div className="flex gap-4 md:gap-6 will-change-transform [backface-visibility:hidden] [transform:translate3d(0,0,0)]">
+                <div className="flex flex-row gap-4 md:gap-6 will-change-transform [backface-visibility:hidden] [transform:translate3d(0,0,0)]">
                   {projects.map((project) => (
                     <div 
                       key={project.id} 
@@ -299,7 +299,7 @@ export function Projects() {
         ) : (
           // Horizontal list for 3 or fewer projects (consistent with user request for horizontal)
           <div 
-            className={`flex flex-nowrap overflow-x-auto snap-x snap-mandatory gap-4 pb-6 -mx-6 px-6 md:mx-0 md:px-0 md:gap-6 scrollbar-hide transition-all duration-1000 delay-300 ${
+            className={`flex flex-row flex-nowrap overflow-x-auto snap-x snap-mandatory gap-4 pb-6 -mx-6 px-6 md:mx-0 md:px-0 md:gap-6 scrollbar-hide transition-all duration-1000 delay-300 ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
             style={{
