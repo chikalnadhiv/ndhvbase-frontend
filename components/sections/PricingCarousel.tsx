@@ -66,14 +66,14 @@ export function PricingCarousel({ plans }: PricingCarouselProps) {
   if (plans.length <= 3) {
     return (
       <div 
-        className="flex flex-nowrap overflow-x-auto snap-x snap-mandatory gap-6 pt-8 pb-12 px-6 -mx-6 md:mx-0 md:px-0 scrollbar-hide"
+        className="flex flex-nowrap overflow-x-auto snap-x snap-mandatory gap-4 pt-8 pb-12 px-6 -mx-6 md:mx-0 md:px-0 md:gap-6 scrollbar-hide"
         style={{
           scrollbarWidth: 'none',
           msOverflowStyle: 'none'
         }}
       >
         {plans.map((plan) => (
-          <div key={plan.id} className="snap-center flex-shrink-0 w-[85vw] md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
+          <div key={plan.id} className="snap-center flex-shrink-0 w-[80vw] md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
             <PricingCard plan={plan} />
           </div>
         ))}
@@ -85,11 +85,11 @@ export function PricingCarousel({ plans }: PricingCarouselProps) {
   return (
     <div className="relative pt-8 pb-12">
       <div className="overflow-hidden px-4 -mx-4" ref={emblaRef}>
-        <div className="flex gap-6 will-change-transform [backface-visibility:hidden] [transform:translate3d(0,0,0)]">
+        <div className="flex gap-4 md:gap-6 will-change-transform [backface-visibility:hidden] [transform:translate3d(0,0,0)]">
           {plans.map((plan) => (
             <div
               key={plan.id}
-              className="flex-[0_0_85%] min-w-0 md:flex-[0_0_calc(50%-12px)] lg:flex-[0_0_calc(33.333%-16px)]"
+              className="flex-[0_0_80%] min-w-0 md:flex-[0_0_calc(50%-12px)] lg:flex-[0_0_calc(33.333%-16px)]"
             >
               <PricingCard plan={plan} />
             </div>
