@@ -65,9 +65,17 @@ export function PricingCarousel({ plans }: PricingCarouselProps) {
   // If 3 or fewer plans, show grid layout
   if (plans.length <= 3) {
     return (
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pt-8 pb-12 px-4">
+      <div 
+        className="flex overflow-x-auto snap-x snap-mandatory gap-6 pt-8 pb-12 px-6 -mx-6 md:mx-0 md:px-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-8"
+        style={{
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none'
+        }}
+      >
         {plans.map((plan) => (
-          <PricingCard key={plan.id} plan={plan} />
+          <div key={plan.id} className="snap-center flex-shrink-0 w-[85vw] md:w-auto">
+            <PricingCard plan={plan} />
+          </div>
         ))}
       </div>
     );
