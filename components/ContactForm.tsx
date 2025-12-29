@@ -8,7 +8,15 @@ import { submitContactForm } from '@/app/actions';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 
-export function ContactForm({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+export function ContactForm({ 
+  isOpen, 
+  onClose, 
+  initialMessage = '' 
+}: { 
+  isOpen: boolean; 
+  onClose: () => void;
+  initialMessage?: string;
+}) {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
 
   async function handleSubmit(formData: FormData) {
@@ -59,13 +67,19 @@ export function ContactForm({ isOpen, onClose }: { isOpen: boolean; onClose: () 
                   <label htmlFor="name" className="block text-sm font-medium text-muted-foreground mb-1">
                     Name
                   </label>
-                  <Input id="name" name="name" placeholder="John Doe" required />
+                  <Input id="name" name="name" placeholder="Your full name" required />
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium text-muted-foreground mb-1">
                     Email
                   </label>
-                  <Input id="email" name="email" type="email" placeholder="john@example.com" required />
+                  <Input id="email" name="email" type="email" placeholder="your@email.com" required />
+                </div>
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-muted-foreground mb-1">
+                    Phone Number
+                  </label>
+                  <Input id="phone" name="phone" type="tel" placeholder="e.g., +62 812..." required />
                 </div>
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-muted-foreground mb-1">
@@ -76,12 +90,14 @@ export function ContactForm({ isOpen, onClose }: { isOpen: boolean; onClose: () 
                     name="message"
                     rows={4}
                     placeholder="Tell us about your project..."
+                    defaultValue={initialMessage}
+                    key={initialMessage}
                     required
                   />
                 </div>
                 <Button
                   type="submit"
-                  className="w-full"
+                  className="w-full h-12 rounded-xl text-white font-semibold shadow-lg shadow-primary/25 bg-gradient-to-r from-[#5e6ad2] to-[#ec4899] hover:opacity-90 transition-opacity"
                   disabled={status === 'submitting'}
                 >
                   {status === 'submitting' ? 'Sending...' : 'Send Message'}

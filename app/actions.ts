@@ -3,9 +3,10 @@
 export async function submitContactForm(formData: FormData) {
   const name = formData.get('name') as string;
   const email = formData.get('email') as string;
+  const phone = formData.get('phone') as string;
   const message = formData.get('message') as string;
 
-  if (!name || !email || !message) {
+  if (!name || !email || !phone || !message) {
     return { success: false, error: 'All fields are required' };
   }
 
@@ -13,7 +14,7 @@ export async function submitContactForm(formData: FormData) {
     const response = await fetch('http://localhost:3001/api/contacts', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, message }),
+      body: JSON.stringify({ name, email, phone, message }),
     });
 
     if (!response.ok) throw new Error('Failed to submit');

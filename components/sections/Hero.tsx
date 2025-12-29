@@ -214,26 +214,26 @@ export function Hero() {
             that drive growth. We blend cutting-edge technology with premium design.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+          <div className="flex flex-row items-center justify-center gap-3 sm:gap-6 px-4">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.5, duration: 0.5 }}
-              className="w-full sm:w-auto"
+              className="flex-1 sm:flex-initial"
             >
               <Button 
                 size="lg" 
-                className="group/cta relative h-12 sm:h-14 px-6 sm:px-10 text-sm sm:text-base rounded-full overflow-hidden border-0 shadow-2xl shadow-primary/40 hover:shadow-primary/60 transition-all hover:scale-105 w-full sm:w-auto"
-                onClick={openContact}
+                className="group/cta relative h-12 sm:h-14 px-4 sm:px-10 text-xs sm:text-base rounded-full overflow-hidden border-0 shadow-2xl shadow-primary/40 hover:shadow-primary/60 transition-all hover:scale-105 w-full sm:w-auto"
+                onClick={() => openContact()}
               >
                 {/* Animated gradient background */}
                 <div className="absolute inset-0 bg-gradient-to-r from-[#5e6ad2] via-[#a855f7] to-[#ec4899]" />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#ec4899] via-[#a855f7] to-[#5e6ad2] opacity-0 group-hover/cta:opacity-100 transition-opacity duration-500" />
                 
                 {/* Button content */}
-                <span className="relative z-10 flex items-center justify-center gap-2 text-white font-semibold">
-                  Start your project
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover/cta:translate-x-1" />
+                <span className="relative z-10 flex items-center justify-center gap-1.5 sm:gap-2 text-white font-semibold whitespace-nowrap">
+                  Start <span className="hidden sm:inline">your</span> project
+                  <ArrowRight className="w-3.5 h-3.5 sm:w-5 sm:h-5 transition-transform group-hover/cta:translate-x-1" />
                 </span>
                 
                 {/* Shine effect */}
@@ -247,18 +247,18 @@ export function Hero() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.6, duration: 0.5 }}
-              className="w-full sm:w-auto"
+              className="flex-1 sm:flex-initial"
             >
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="group/secondary relative h-12 sm:h-14 px-6 sm:px-10 text-sm sm:text-base rounded-full border-2 border-foreground/30 bg-background/50 backdrop-blur-sm hover:bg-gradient-to-r hover:from-[#5e6ad2] hover:via-[#a855f7] hover:to-[#ec4899] hover:text-white hover:border-transparent transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl w-full sm:w-auto" 
+                className="group/secondary relative h-12 sm:h-14 px-4 sm:px-10 text-xs sm:text-base rounded-full border-2 border-foreground/30 bg-background/50 backdrop-blur-sm hover:bg-gradient-to-r hover:from-[#5e6ad2] hover:via-[#a855f7] hover:to-[#ec4899] hover:text-white hover:border-transparent transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl w-full sm:w-auto" 
                 asChild
               >
-                <Link href="#projects" className="flex items-center justify-center gap-2">
-                  <span className="font-semibold">View our work</span>
-                  <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full border-2 border-current flex items-center justify-center transition-transform group-hover/secondary:rotate-45">
-                    <ArrowRight className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
+                <Link href="#projects" className="flex items-center justify-center gap-1.5 sm:gap-2">
+                  <span className="font-semibold whitespace-nowrap"><span className="hidden sm:inline">View</span> our work</span>
+                  <div className="w-3.5 h-3.5 sm:w-5 sm:h-5 rounded-full border-2 border-current flex items-center justify-center transition-transform group-hover/secondary:rotate-45">
+                    <ArrowRight className="w-2 h-2 sm:w-3 sm:h-3" />
                   </div>
                 </Link>
               </Button>

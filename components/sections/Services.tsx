@@ -4,22 +4,26 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { CodeBackground } from '@/components/ui/code-background';
+import { useContact } from '@/components/contact-provider';
 
 const services = [
   {
     title: 'Web Development',
     description: 'High-performance websites built with Next.js and modern technologies.',
     image: '/assets/web-dev.png',
+    message: "Hi, I'm interested in Web Development services. I'd like to discuss building a high-performance website."
   },
   {
     title: 'UI/UX Design',
     description: 'Intuitive and beautiful interfaces that users love to interact with.',
     image: '/assets/ui-ux.png',
+    message: "Hi, I'm interested in UI/UX Design services. I'd like to discuss creating beautiful interfaces for my project."
   },
   {
     title: 'Consulting',
     description: 'Expert advice on technical strategy and digital transformation.',
     image: '/assets/consulting.png',
+    message: "Hi, I'm interested in Consulting services. I'd like to get expert advice on my technical strategy."
   },
 ];
 
@@ -97,6 +101,8 @@ const snippets = [
 ];
 
 export function Services() {
+  const { openContact } = useContact();
+
   return (
     <section id="services" className="min-h-[100svh] flex flex-col justify-center items-center py-24 relative overflow-hidden">
       <CodeBackground snippets={snippets} />
@@ -134,6 +140,8 @@ export function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
+              onClick={() => openContact(service.message)}
+              className="cursor-pointer"
             >
               <div className="group relative h-full">
                 {/* Subtle gradient border - visible but not overwhelming */}
